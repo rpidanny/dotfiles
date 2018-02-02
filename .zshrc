@@ -95,14 +95,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export LC_ALL=en_US.UTF-8
 
+# SSH into aws EC2 instance
+alias awslogin="ssh -i ~/Downloads/redhat1.pem ubuntu@ec2-18-217-19-218.us-east-2.compute.amazonaws.com"
+
+# list files with size in descending order
+alias sortfiles="du -sh * | sort -h"
+
+
+# Exports
+export LC_ALL=en_US.UTF-8
 export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH='/usr/local/cuda/lib64'
 export CUDA_HOME=/usr/local/cuda
-
-# tmux
-
-# awslogin
-alias awslogin="ssh -i ~/Downloads/redhat1.pem ubuntu@ec2-18-217-19-218.us-east-2.compute.amazonaws.com"
-alias sortfiles="du -sh * | sort -h"
