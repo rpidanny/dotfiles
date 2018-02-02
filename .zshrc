@@ -102,6 +102,9 @@ alias awslogin="ssh -i ~/Downloads/redhat1.pem ubuntu@ec2-18-217-19-218.us-east-
 # list files with size in descending order
 alias sortfiles="du -sh * | sort -h"
 
+# copy with progress
+alias cp="rsync -ah --progress"
+
 
 # Exports
 export LC_ALL=en_US.UTF-8
