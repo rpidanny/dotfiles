@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # SSH into aws EC2 instance
-alias awslogin="ssh -i ~/Downloads/redhat1.pem ubuntu@ec2-18-217-19-218.us-east-2.compute.amazonaws.com"
+alias awslogin="ssh -i ~/Downloads/aws-ubuntu.pem ubuntu@ec2-54-89-211-222.compute-1.amazonaws.com"
 
 # list files with size in descending order
 alias sortfiles="du -sh * | sort -h"
@@ -105,6 +105,11 @@ alias sortfiles="du -sh * | sort -h"
 # copy with progress
 alias cp="rsync -ah --progress"
 
+# heroku logs
+alias herokulog=heroku logs --tail
+
+# apple display brightness
+alias bright='f() { sudo /home/abhishek/workspace/github/acdcontrol/acdcontrol /dev/usb/hiddev1 $1}; f'
 
 # Exports
 export LC_ALL=en_US.UTF-8
