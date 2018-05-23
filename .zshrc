@@ -110,7 +110,7 @@ alias cp="rsync -ah --progress"
 alias herokulog=heroku logs --tail
 
 # apple display brightness
-alias bright='f() { sudo /home/abhishek/workspace/github/acdcontrol/acdcontrol /dev/usb/hiddev0 $1}; f'
+alias bright='f() { sudo /home/abhishek/workspace/github/acdcontrol/acdcontrol /dev/usb/hiddev$1 $2}; f'
 
 # Exports
 export LC_ALL=en_US.UTF-8
