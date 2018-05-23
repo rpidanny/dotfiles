@@ -61,9 +61,11 @@ ENABLE_CORRECTION="true"
 plugins=(
   git
   docker
+  docker-compose
   zsh-autosuggestions
   zsh-syntax-highlighting
   virtualenv
+  history
 )
 
 source $ZSH/oh-my-zsh.sh
