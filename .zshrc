@@ -63,6 +63,7 @@ plugins=(
   docker
   zsh-autosuggestions
   zsh-syntax-highlighting
+  virtualenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -109,10 +110,17 @@ alias cp="rsync -ah --progress"
 alias herokulog=heroku logs --tail
 
 # apple display brightness
-alias bright='f() { sudo /home/abhishek/workspace/github/acdcontrol/acdcontrol /dev/usb/hiddev1 $1}; f'
+alias bright='f() { sudo /home/abhishek/workspace/github/acdcontrol/acdcontrol /dev/usb/hiddev0 $1}; f'
 
 # Exports
 export LC_ALL=en_US.UTF-8
 export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH='/usr/local/cuda/lib64'
 export CUDA_HOME=/usr/local/cuda
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME
+export GOBIN=$GOPATH/bin
+
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
