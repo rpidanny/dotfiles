@@ -114,6 +114,10 @@ alias herokulog=heroku logs --tail
 # apple display brightness
 alias bright='f() { sudo /home/abhishek/workspace/github/acdcontrol/acdcontrol /dev/usb/hiddev$1 $2}; f'
 
+# git stuffs
+alias gpom=git push origin master
+alias gpod=git push origin develop
+
 # Exports
 export LC_ALL=en_US.UTF-8
 # export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
