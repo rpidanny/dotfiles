@@ -6,8 +6,6 @@ Stuffs that makes my life a bit easier...
 
 ### Prerequisites
 
-__Disclaimer:__ _bright isn't garunteed to work on all Linux Distos, Feel free to submit bug reports._
-
 * Unix Like Operating System
 * `curl` or `wget` should be installed
 * `git` should be installed
