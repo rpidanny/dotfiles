@@ -133,3 +133,22 @@ function o() {
 		xdg-open "$@";
 	fi;
 }
+
+# Convert video file to GIF
+function video2gif() {
+	if [ ! -n "$1" ]; then
+    echo "Usage: video2gif inputfile outputfile"
+    echo "FATAL: Did not pass directory"
+    return 1
+	elif [ -n "$3" ]; then
+    echo "Usage: video2gif inputfile outputfile"
+    echo "FATAL: Too many arguments"
+    return 1
+  elif [ -z "$2" ]; then
+		ffmpeg -v warning -ss 2 -t 5 -i $1 -vf scale=320:-1 -gifflags -transdiff -y $1.gif
+		echo "${1}.gif created."
+  else
+		ffmpeg -v warning -ss 2 -t 5 -i $1 -vf scale=320:-1 -gifflags -transdiff -y $2
+		echo "${2} created."
+  fi
+}
