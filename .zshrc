@@ -100,6 +100,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source .aliases
-
-# Exports
 source .exports
+source .functions
