@@ -5,9 +5,22 @@ function bright() {
   acdcontrol /dev/usb/hiddev$1 $2;
 }
 
-# Create a new directory and enter it
-function mkd() {
-  mkdir -p "$@" && cd "$_";
+# Create a directory and cd into it.
+function mcd {
+  if [ ! -n "$1" ]; then
+    echo "Usage: mcd directory"
+    echo "FATAL: Did not pass directory"
+    return 1
+  elif [ -n "$2" ]; then
+    echo "Usage: mcd directory"
+    echo "FATAL: Too many arguments"
+    return 1
+  elif [ -d $1 ]; then
+    echo "'$1' already exists"
+    return 1
+  else
+    mkdir -p $1 && cd $1
+  fi
 }
 
 # Determine size of a file or total size of a directory
@@ -18,8 +31,8 @@ function fs() {
 		local arg=-sh;
 	fi
 	if [[ -n "$@" ]]; then
-		du $arg -- "$@";
+		du $arg -- "$@" | sort -h;
 	else
-		du $arg .[^.]* ./*;
+		du $arg .[^.]* ./* | sort -h;
 	fi;
 }
