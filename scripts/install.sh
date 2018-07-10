@@ -141,3 +141,6 @@ install_dotfiles () {
 # cd dotfiles
 # setup_gitconfig
 install_dotfiles
+
+echo ''
+echo '  All installed!'

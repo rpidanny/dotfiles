@@ -152,3 +152,6 @@ function video2gif() {
 		echo "${2} created."
   fi
 }
+
+# For local functions
+[ -f '.functions.local' ] && source '.functions.local'

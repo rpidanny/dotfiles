@@ -11,3 +11,6 @@ export PATH=/home/abhishek/workspace/rnd/hyperledger/fabric-samples/bin:$PATH
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
+
+# For local exports
+[ -f '.exports.local' ] && source '.exports.local'
