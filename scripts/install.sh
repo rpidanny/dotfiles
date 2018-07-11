@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "$0")/.."
-DOTFILES_ROOT=$(pwd -P)
+# cd "$(dirname "$0")/.."
 
 set -e
 
@@ -134,11 +133,13 @@ install_dotfiles () {
   done
 }
 
-# info "Restoring dotfiles."
-# dir="$HOME/workspace/personal"
-# mkdir -p $dir && cd $dir
-# git clone https://github.com/rpidanny/dotfiles.git
-# cd dotfiles
+echo 'Restoring dotfiles'
+dir='$HOME/workspace/personal'
+mkdir -p $dir && cd $dir
+git clone https://github.com/rpidanny/dotfiles.git
+cd dotfiles
+DOTFILES_ROOT=$(pwd -P)
+
 # setup_gitconfig
 install_dotfiles
 
