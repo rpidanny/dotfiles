@@ -134,7 +134,7 @@ install_dotfiles () {
 }
 
 echo 'Restoring dotfiles'
-dir='$HOME/workspace/personal'
+dir="$HOME/workspace/personal"
 mkdir -p $dir && cd $dir
 git clone https://github.com/rpidanny/dotfiles.git
 cd dotfiles
