@@ -145,8 +145,8 @@ cd dotfiles
 DOTFILES_ROOT=$(pwd -P)
 
 setup_gitconfig
-# install_dotfiles
-# setup_hosts
+install_dotfiles
+setup_hosts
 
 echo ''
 echo '  All installed!'
