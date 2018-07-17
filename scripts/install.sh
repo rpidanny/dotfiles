@@ -133,6 +133,12 @@ install_dotfiles () {
   done
 }
 
+setup_hosts () {
+  info 'installing hosts file'
+  sudo sh -c "curl -s https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts >> /etc/hosts"
+  success 'hosts'
+}
+
 echo 'Restoring dotfiles'
 dir="$HOME/workspace/personal"
 mkdir -p $dir && cd $dir
@@ -142,6 +148,7 @@ DOTFILES_ROOT=$(pwd -P)
 
 # setup_gitconfig
 install_dotfiles
+setup_hosts
 
 echo ''
 echo '  All installed!'
