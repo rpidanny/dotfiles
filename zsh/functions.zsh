@@ -153,5 +153,21 @@ function video2gif() {
   fi
 }
 
+# Nuke Node Modules
+function nnm() {
+	if [ ! -n "$1" ]; then
+    echo "Usage: nnm path"
+    echo "FATAL: Did not pass directory"
+    return 1
+	elif [ -n "$2" ]; then
+    echo "Usage: nnm path"
+    echo "FATAL: Too many arguments"
+    return 1
+  else
+		rm -rf $(find $1 -type d -name "node_modules" -print)
+		echo "${1} nuked"
+  fi
+}
+
 # For local functions
 [ -f '.functions.local' ] && source '.functions.local'
