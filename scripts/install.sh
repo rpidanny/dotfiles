@@ -25,22 +25,16 @@ fail () {
 }
 
 setup_gitconfig () {
-  if ! [ -f git/gitconfig.local.symlink ]
+  if ! [ -f git/gitconfig.zsh ]
   then
     info 'setup gitconfig'
-
-    git_credential='cache'
-    if [ "$(uname -s)" == "Darwin" ]
-    then
-      git_credential='osxkeychain'
-    fi
 
     user ' - What is your github author name?'
     read -e git_authorname
     user ' - What is your github author email?'
     read -e git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" git/gitconfig.example > git/gitconfig.zsh
 
     success 'gitconfig'
   fi
@@ -141,14 +135,18 @@ setup_hosts () {
 
 echo 'Restoring dotfiles'
 dir="$HOME/workspace/personal"
+if ! [ -f $dir ]
+then
+  sudo rm -r $dir
+fi
 mkdir -p $dir && cd $dir
 git clone https://github.com/rpidanny/dotfiles.git
 cd dotfiles
 DOTFILES_ROOT=$(pwd -P)
 
-# setup_gitconfig
-install_dotfiles
-setup_hosts
+setup_gitconfig
+# install_dotfiles
+# setup_hosts
 
 echo ''
 echo '  All installed!'
