@@ -1,5 +1,5 @@
 # SSH into aws EC2 instance
-alias awslogin='ssh -i ~/Downloads/aws-ubuntu.pem ubuntu@ec2-54-89-211-222.compute-1.amazonaws.com'
+alias awslogin='ssh -i ~/Downloads/aws-ubuntu.pem ubuntu@ec2-52-207-235-38.compute-1.amazonaws.com'
 
 # list files with size in descending order
 alias sortfiles='du -sh * | sort -h'
