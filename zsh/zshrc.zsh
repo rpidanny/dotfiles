@@ -66,6 +66,7 @@ plugins=(
   zsh-syntax-highlighting
   virtualenv
   history
+  npm
 )
 
 source $ZSH/oh-my-zsh.sh
