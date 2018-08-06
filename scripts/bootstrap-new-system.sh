@@ -8,6 +8,9 @@ echo_green () {
 }
 
 install_oh_my_zsh () {
+  # installing oh-my-zsh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
   # installing zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
@@ -56,12 +59,10 @@ install_commons () {
 
 install_desktop () {
   # install desktop apps
-  echo_green "Installing Desktop Apps"
+  echo_green "Installing Apps"
   sudo apt-get install -y ubuntu-restricted-extras gimp vlc browser-plugin-vlc \
-  libappindicator1 dconf-cli diodon pylint qbittorrent exfat-fuse exfat-utils
-
-  # installing eslint
-  sudo npm i -g eslint
+  libappindicator1 dconf-cli diodon exfat-fuse exfat-utils \
+  fonts-firacode
 
   # download chrome
   echo_green "Downloading Chrome"
@@ -70,14 +71,6 @@ install_desktop () {
   # install chrome
   echo_green "Installing Chrome"
   sudo dpkg -i google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb
-
-  # downloading skype
-  echo_green "Downloading Skype"
-  wget -c https://repo.skype.com/latest/skypeforlinux-64.deb
-
-  # install skype
-  echo_green "Installing Skype"
-  sudo dpkg -i skypeforlinux-64.deb && rm skypeforlinux-64.deb
 }
 
 option="$1"
