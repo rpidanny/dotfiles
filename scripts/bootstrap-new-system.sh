@@ -7,6 +7,22 @@ echo_green () {
   echo -e "${GREEN}$1${NC}"
 }
 
+install_oh_my_zsh () {
+  # installing zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+  # installing zsh-syntax
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+  # Setting zsh as default
+  echo_green "Setting zsh as default"
+  chsh -s $(which zsh)
+
+  # installing theme
+  echo_green "Installing powerline theme"
+  sudo apt-get install -y fonts-powerline
+}
+
 install_commons () {
   # updating apt-get
   echo_green "Updating apt-get"
@@ -33,6 +49,9 @@ install_commons () {
 
   # installing http-server
   sudo npm i -g http-server
+
+  # install oh-my-zsh
+  install_oh_my_zsh
 }
 
 install_desktop () {
@@ -59,34 +78,6 @@ install_desktop () {
   # install skype
   echo_green "Installing Skype"
   sudo dpkg -i skypeforlinux-64.deb && rm skypeforlinux-64.deb
-}
-
-restore_configs () {
-  # installing oh-my-zsh
-  echo_green "Installing oh-my-zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-  # installing zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
-  # installing zsh-syntax
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-  # Getting zsh config
-  echo_green "Restoring .zshrc"
-  wget https://raw.githubusercontent.com/rpidanny/dotfiles/master/.zshrc -O $HOME/.zshrc
-
-  # Getting tmux config
-  echo_green "Restoring .tmux.conf"
-  wget https://raw.githubusercontent.com/rpidanny/dotfiles/master/.tmux.conf -O $HOME/.tmux.conf
-
-  # Setting zsh as default
-  echo_green "Setting zsh as default"
-  chsh -s $(which zsh)
-
-  # installing theme
-  echo_green "Installing powerline theme"
-  sudo apt-get install -y fonts-powerline
 }
 
 option="$1"
