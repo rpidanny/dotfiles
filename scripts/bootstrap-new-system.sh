@@ -97,12 +97,12 @@ else
   case "$option" in
     "server") 
       install_commons
-      restore_configs
+      # restore_configs
       ;;
     "desktop")
       install_commons
       install_desktop
-      restore_configs
+      # restore_configs
       ;;
     *)  printf "Invalid argument!\nUsage: $0 <server/desktop>" >&2
         exit 1 ;;
