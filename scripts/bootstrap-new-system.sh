@@ -51,7 +51,7 @@ install_commons () {
   sudo apt-get install -y nodejs
 
   # installing http-server
-  sudo npm i -g http-server
+  sudo npm i -g http-server tldr
 
   # install oh-my-zsh
   install_oh_my_zsh
