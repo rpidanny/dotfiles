@@ -153,6 +153,27 @@ function video2gif() {
   fi
 }
 
+# rotate video 90 clockwise
+function rvc() {
+	if [ ! -n "$1" ]; then
+    echo "Usage: rvc inputfile outputfile"
+    echo "FATAL: Did not pass directory"
+    return 1
+	elif [ -n "$3" ]; then
+    echo "Usage: rvc inputfile outputfile"
+    echo "FATAL: Too many arguments"
+    return 1
+  elif [ -z "$2" ]; then
+		filename="${1%%.*}"
+		ext="${1##*.}"
+		ffmpeg -i $1 -vf "transpose=1" ${filename}_90c.${ext}
+		echo "${1} rotated."
+  else
+		ffmpeg -i $1 -vf "transpose=1" $2
+		echo "${1} saved as ${2} ."
+  fi
+}
+
 # Nuke Node Modules
 function nnm() {
 	if [ ! -n "$1" ]; then
