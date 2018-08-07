@@ -17,5 +17,8 @@ alias herokulog='heroku logs --tail'
 alias gpom='git push origin master'
 alias gpod='git push origin develop'
 
+# dmesg tail
+alias dmesgt='dmesg -wH'
+
 # For local aliases
 [ -f '.aliases.local' ] && source '.aliases.local'
