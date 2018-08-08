@@ -16,6 +16,10 @@ alias herokulog='heroku logs --tail'
 # git stuffs
 alias gpom='git push origin master'
 alias gpod='git push origin develop'
+alias gpgm='git push gitlab master'
+alias gpgd='git push gitlab develop'
+alias gpbm='git push bitbucket master'
+alias gpbd='git push bitbucket develop'
 
 # dmesg tail
 alias dmesgt='dmesg -wH'
