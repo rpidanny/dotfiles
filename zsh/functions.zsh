@@ -190,5 +190,12 @@ function nnm() {
   fi
 }
 
+# Get pylintrc from google's yapf project
+function getpylintrc() {
+	echo "Fetching pylintrc.."
+	wget -c -q https://raw.githubusercontent.com/google/yapf/master/pylintrc -O .pylintrc
+	echo "Saved to .pylintrc"
+}
+
 # For local functions
 [ -f '.functions.local' ] && source '.functions.local'
