@@ -67,6 +67,7 @@ plugins=(
   virtualenv
   history
   npm
+  aws
 )
 
 source $ZSH/oh-my-zsh.sh
