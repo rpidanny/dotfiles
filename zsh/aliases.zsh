@@ -24,5 +24,8 @@ alias gpbd='git push bitbucket develop'
 # dmesg tail
 alias dmesgt='dmesg -wH'
 
+# arduino
+alias arduino='/opt/arduino-1.8.6/arduino'
+
 # For local aliases
 [ -f '.aliases.local' ] && source '.aliases.local'
