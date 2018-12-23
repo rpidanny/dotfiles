@@ -104,3 +104,4 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 source $HOME/.exports
 source $HOME/.functions
+source $HOME/.startup-cmds
