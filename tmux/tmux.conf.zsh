@@ -9,6 +9,10 @@ set -g mouse on
 # Set the default terminal mode to 256color mode
 set -g default-terminal "screen-256color"
 
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
 # Automatically set window title
 set-window-option -g automatic-rename on
 set-option -g set-titles on
