@@ -3,6 +3,12 @@ unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 
+# Mouse support
+set -g mouse on
+
+# Set the default terminal mode to 256color mode
+set -g default-terminal "screen-256color"
+
 # Automatically set window title
 set-window-option -g automatic-rename on
 set-option -g set-titles on
