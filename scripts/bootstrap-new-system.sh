@@ -17,6 +17,9 @@ install_oh_my_zsh () {
   # installing zsh-syntax
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+  # install powerlevel9k theme
+  git clone https://github.com/bhilburn/powerlevel9k.git $ZSH_CUSTOM/themes/powerlevel9k
+
   # Setting zsh as default
   echo_green "Setting zsh as default"
   chsh -s $(which zsh)
