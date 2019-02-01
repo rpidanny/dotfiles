@@ -24,9 +24,13 @@ install_oh_my_zsh () {
   echo_green "Setting zsh as default"
   chsh -s $(which zsh)
 
-  # installing theme
-  echo_green "Installing powerline theme"
+  # installing fonts
+  echo_green "Installing powerline"
   sudo apt-get install -y fonts-powerline
+
+  echo_green "Installing nerd-fonts"
+  mkdir -p ~/.local/share/fonts
+  cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 }
 
 install_commons () {
