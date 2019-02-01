@@ -7,6 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Powerlevel9K configs
 VIRTUAL_ENV_DISABLE_PROMPT=1
 # POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
