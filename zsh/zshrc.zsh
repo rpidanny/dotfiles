@@ -76,6 +76,7 @@ plugins=(
   history
   npm
   aws
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
