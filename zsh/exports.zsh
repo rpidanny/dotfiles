@@ -7,6 +7,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME
 export GOBIN=$GOPATH/bin
 export PATH=/home/abhishek/workspace/rnd/hyperledger/fabric-samples/bin:$PATH
+export TFHUB_CACHE_DIR=$HOME/.tfhub_modules
 
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
