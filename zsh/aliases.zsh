@@ -27,7 +27,7 @@ alias gcd='git checkout develop'
 alias dmesgt='dmesg -wH'
 
 # arduino
-alias arduino='/opt/arduino-1.8.6/arduino'
+alias arduino='/opt/arduino-1.8.9/arduino'
 
 # For local aliases
 [ -f '.aliases.local' ] && source '.aliases.local'
