@@ -185,8 +185,16 @@ function nnm() {
     echo "FATAL: Too many arguments"
     return 1
   else
-		rm -rf $(find $1 -type d -name "node_modules" -print)
-		echo "${1} nuked"
+		echo "🔍 Scanning for node_modules directories in: $1"
+		local count=$(find $1 -type d -name "node_modules" 2>/dev/null | wc -l | tr -d ' ')
+		if [ "$count" -eq 0 ]; then
+			echo "✅ No node_modules directories found in $1"
+			return 0
+		fi
+		echo "📦 Found $count node_modules directory(ies)"
+		echo "🗑️  Removing node_modules directories..."
+		find $1 -type d -name "node_modules" -exec rm -rf {} + 2>/dev/null
+		echo "✅ Successfully nuked $count node_modules directory(ies) from $1"
   fi
 }
 
